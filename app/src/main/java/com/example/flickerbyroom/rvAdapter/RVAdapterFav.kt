@@ -10,7 +10,7 @@ import com.example.flickerbyroom.R
 import com.example.flickerbyroom.roomDatabase.Flicker
 import kotlinx.android.synthetic.main.item_row2.view.*
 
-class RVAdapterFav(private val activity: FavoritePage, private val names: List<Flicker>) : RecyclerView.Adapter<RVAdapterFav.ItemViewHolder>() {
+class RVAdapterFav(private val activity:FavoritePage, private val names: List<Flicker>) : RecyclerView.Adapter<RVAdapterFav.ItemViewHolder>() {
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -27,10 +27,13 @@ class RVAdapterFav(private val activity: FavoritePage, private val names: List<F
 
         holder.itemView.apply {
             title.text = photo.title
-
+            //show the images in RV
             Glide.with(holder.itemView.context)
                 .load(photo.link)
                 .into(imageView2)
+            clItr.setOnClickListener {
+                activity.confirm(photo)
+            }
         }
     }
 

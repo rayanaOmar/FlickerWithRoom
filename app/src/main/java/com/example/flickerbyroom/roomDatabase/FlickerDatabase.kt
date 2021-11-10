@@ -20,5 +20,6 @@ abstract class FlickerDatabase: RoomDatabase() {
             return instant as FlickerDatabase
         }
     }
+    //
     abstract fun FlickerDao(): FlickerDao;
 }

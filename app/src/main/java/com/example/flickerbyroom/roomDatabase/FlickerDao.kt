@@ -13,4 +13,7 @@ interface FlickerDao {
     @Insert
     fun insertImg(img:  Flicker)
 
+    @Delete
+    fun deleteImg(img: Flicker)
+
 }

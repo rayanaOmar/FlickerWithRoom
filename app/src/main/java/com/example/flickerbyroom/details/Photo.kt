@@ -6,3 +6,4 @@ data class Photo (
     var server: String,
     var title:String
 )
+

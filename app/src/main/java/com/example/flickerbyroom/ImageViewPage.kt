@@ -40,8 +40,8 @@ class ImageViewPage : AppCompatActivity() {
     }
 
     //function section
-
     private fun saveImage(title: String, link: String){
+        //When user click on save icon the image will save to database
         val databaseObject = FlickerDatabase.getInstant(applicationContext)
         databaseObject.FlickerDao().insertImg(Flicker(0,title,link))
         //show Toast
@@ -62,6 +62,5 @@ class ImageViewPage : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-
     }
 }

@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.flickerbyroom.ImageViewPage
-import com.example.flickerbyroom.MainActivity
 import com.example.flickerbyroom.R
 import com.example.flickerbyroom.details.Photo
 import kotlinx.android.synthetic.main.item_row.view.*
 
-class RVAdapter(private val activity: MainActivity, private val names: ArrayList<Photo>) : RecyclerView.Adapter<RVAdapter.ItemViewHolder>() {
+class RVAdapter(private val names: ArrayList<Photo>) : RecyclerView.Adapter<RVAdapter.ItemViewHolder>() {
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -31,9 +30,8 @@ class RVAdapter(private val activity: MainActivity, private val names: ArrayList
             Glide.with(holder.itemView.context)
                 .load(link)
                 .into(imageView2)
-
+            //when chick on image go to ImageViewPage with 2 values (title and link)
             clItr.setOnClickListener {
-
                 val info = Intent(holder.itemView.context, ImageViewPage::class.java)
                 info.putExtra("title", photo.title)
                 info.putExtra("link", link)

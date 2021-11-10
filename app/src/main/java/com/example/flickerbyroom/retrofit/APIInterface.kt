@@ -10,5 +10,4 @@ interface APIInterface {
     @GET("rest/?method=flickr.photos.search&api_key=e9adcd4ca6d5f0be2911653427f6a517&per_page=10&format=json&nojsoncallback=1")
     fun doGetListResources(@Query("text")text:String): Call<PhotoDetails?>?
 
-
 }

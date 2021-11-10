@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var search: EditText
     private lateinit var btnSearch: Button
 
-
     private var images = ArrayList<Photo>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         search = findViewById(R.id.edSearch)
         btnSearch = findViewById(R.id.button)
 
-        recycle.adapter = RVAdapter(this, images)
+        recycle.adapter = RVAdapter(images)
         recycle.layoutManager = LinearLayoutManager(this)
 
         btnSearch.setOnClickListener {
@@ -50,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Search is empty", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
 
     private fun requestAPI(){
